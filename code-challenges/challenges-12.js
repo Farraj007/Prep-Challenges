@@ -15,7 +15,8 @@
 // ------------------------
 
 const oddFiltration = (arr) => {
-    // will 
+    let last
+    // will do
     // write your code here
 }
 
