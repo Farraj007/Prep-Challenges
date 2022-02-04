@@ -38,6 +38,10 @@
 // ------------------------
 
 const objectCounter = (obj) => {
+    let counter = obj.reduce((previousValue,currentValue, currentIndex) => {
+        return currentIndex++;
+      });
+      return counter + 1;
     // write your code here
 
 }
@@ -56,6 +60,9 @@ const objectCounter = (obj) => {
 // ------------------------
 
 const stringReverse = (str) => {
+    const arr = str.split(' ')
+    let newarr = arr.reduce((previousValue, currentValue)=>{return `${currentValue} ${previousValue}`})
+    return newarr
     // write your code here
 
 }
@@ -99,10 +106,20 @@ const stringReverse = (str) => {
 // ------------------------
 
 const statistics = (obj) => {
-    // write your code here
+    let count = obj.reduce(function (prev,curr) {
+        if (curr.votes_To in prev){
+            prev[curr.votes_To]++
+        }
+        else {
+            prev[curr.votes_To]=1;
+        }
+        return prev;
+        console.log(prev);
+
+    },{})
+    return count;
+   
 }
-
-
 
 module.exports = { objectCounter, stringReverse, statistics };
 
