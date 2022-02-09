@@ -20,12 +20,12 @@
 
 const LastWord = (str) => {
     let last = str.lastIndexOf(' ')
-    if (last == -1){
-        return str
-    }
-    else {
+    // if (last == -1){
+    //     return str
+    // }
+    // else {
         return str.slice(last + 1)
-    }
+    // }
     // write your code here
 }
 
@@ -83,13 +83,11 @@ const replaceWords = (str) => {
 // ------------------------
 
 const arrToStr = (arr) => {
-    arr = arr.slice(0,5).join(' ')+","+arr.slice(4,arr.length).join(' ')    
-    arr = arr.splice(4,1,'')
-//   for (let i=0 ;i<4;i++){
-//     arr=arr[i].join(' ')
-//   }
- return arr
-    // write your code here
+   let newarr = arr.slice(0,5).join(' ')+", "+arr.slice(5,arr.length).join(' ')   
+   newarr = newarr.trim() 
+
+ return newarr
+
 }
 
 // 5) ---------------------
@@ -105,6 +103,27 @@ const arrToStr = (arr) => {
 // ------------------------
 
 const letterCounter = (str) => {
+    let arr = str.split(" ");
+    let counter = 1;
+    let res = [];
+    let finalArr = [];
+    for (let i = 0; i < arr.length; i++) {
+      let strArr = arr[i].split("");
+      res = [];
+      for (let i = 0; i < strArr.length; i++) {
+        if (strArr[i] == strArr[i + 1]) {
+          counter++;
+        } else if (strArr[i] == " ") {
+          continue;
+        } else {
+          res.push(`${strArr[i]}${counter}`);
+          counter = 1;
+        }
+      }
+      let word = res.join("");
+      finalArr.push(word);
+    }
+    return finalArr.join(" ");
     // write your code here
 }
 
