@@ -64,7 +64,6 @@ const stringReverse = (str) => {
     let newarr = arr.reduce((previousValue, currentValue)=>{return `${currentValue} ${previousValue}`})
     return newarr
     // write your code here
-
 }
 
 // 3) ---------------------
@@ -114,7 +113,6 @@ const statistics = (obj) => {
             prev[curr.votes_To]=1;
         }
         return prev;
-        console.log(prev);
 
     },{})
     return count;
