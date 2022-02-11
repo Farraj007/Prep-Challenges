@@ -5,7 +5,15 @@
             "source": [
                 "## Hacker Rank\n\nFor Thursdays you will be solving some selected challenges on HackerRank, please create an account if you don't have then\nFollow the links below:\nread them carefully and solve them then copy-paste your solution below in Code Block"
             ],
-            "outputs": []
+            "outputs": [ function equalizeArray(arr) {
+  const newArr={};
+  arr.forEach(a=> newArr[a] ? newArr[a]++ : (newArr[a]=1));
+  const max = Math.max(...Object.values(newArr));
+  return arr.length - max
+    // Write your code here
+
+
+}]
         },
         {
             "language": "markdown",
