@@ -15,8 +15,8 @@
 // ------------------------
 
 const oddFiltration = (arr) => {
-    // will 
-    // write your code here
+    const result = arr.filter(checkOdd=> checkOdd%2 !=0  )
+    return result
 }
 
 // 2) ---------------------
@@ -67,8 +67,11 @@ const oddFiltration = (arr) => {
 // ------------------------
 
 const cvsFiltration = (arr) => {
-    // write your code here
+    const filt = arr.filter(who => (who.yearsOfExperience > 4&&who.firstName != null&&who.LastName != null) );
+    return filt.map(who=> {return {fullName: `${who.firstName} ${who.LastName}`,tech: who.tech}
+} );
 }
+
 
 // 3) ---------------------
 //
@@ -80,6 +83,9 @@ const cvsFiltration = (arr) => {
 // ------------------------
 
 const vowelsFiltration = (arr) => {
+    return arr.filter((vow) =>
+    vow.indexOf('a')==-1 && vow.indexOf('o')== -1 && vow.indexOf('u')==-1 && vow.indexOf('i')==-1 && vow.indexOf('e')==-1
+    );
     // write your code here
 } 
 
@@ -98,6 +104,9 @@ const vowelsFiltration = (arr) => {
 // ------------------------
 
 const skillComparison = (arr1, arr2) => {
+    let newArr2 = arr2.filter(i => !arr1.includes(i) );
+    let newArr1 = arr1.filter(i => !arr2.includes(i) );
+    return newArr1.concat(newArr2);
     // write your code here
 }
 

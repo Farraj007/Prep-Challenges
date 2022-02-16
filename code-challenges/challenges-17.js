@@ -15,8 +15,24 @@
 //
 
 const recursionPattern = (int1, int2) => {
-    // write your code here
-}
+    let output = [];
+  let i = 0;
+  function patterns(in1, in2) {
+    if (in1 > int1) {
+      return output;
+    } else if (i < int1 / int2) {
+      output.push(in1);
+      i++;
+      return patterns(in1 - in2, in2);
+    } else {
+      output.push(in1);
+      return patterns(in1 + in2, in2);
+    }
+  }
+  return patterns(int1, int2);
+};
+    
+
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -34,6 +50,8 @@ const recursionPattern = (int1, int2) => {
 // 
 
 const filterLinks = (str) => {
+    // let splited = str.split('/');
+    return str.split('/')[2].split('"')[0];
     // write your code here
 }
 // -------------------------------------------------------------------------------------------------------
@@ -53,8 +71,17 @@ const filterLinks = (str) => {
 //
 
 const isPalindrome = (str) => {
-    // write your code here
+  let regex = /[^A-Za-z]/g;
+  let string = str.replace(regex,"").toLowerCase();
+  let regexString = string.split("").reverse().join("");
+  if (string !== regexString){
+      return false;
+  }
+  else{
+   return true;
+  }
 }
+
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -77,6 +104,7 @@ const isPalindrome = (str) => {
 //
 
 const samePattern = (str, arr) => {
+  
     // write your code here
 }
 // -------------------------------------------------------------------------------------------------------
