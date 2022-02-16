@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 // -------------------------------------------------------------------------------------------------------
 // Challenge 01:
@@ -14,11 +14,11 @@
 // Output: 1
 //
 
-const wordLength = (str) => {????
-    // write your code here
-}
+const wordLength = (str) => {
+  let out = str.split(" ");
+  return out[Math.floor(out.length / 2)].length;
+};
 // -------------------------------------------------------------------------------------------------------
-
 
 // -------------------------------------------------------------------------------------------------------
 // Challenge 02:
@@ -40,8 +40,15 @@ const wordLength = (str) => {????
 // Output: false
 
 const wordLetters = (str1, str2) => {
-    // write your code here
-}
+  let arr1 = str1.split("");
+  let arr2 = str2.split("");
+  if (str1.length !== str2.length) return false;
+  for (let i = 0; i < arr1.length; i++) {
+    if (!str1.includes(arr2[i])) return false;
+    if (!str2.includes(arr1[i])) return false;
+  }
+  return true;
+};
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
@@ -64,8 +71,8 @@ const wordLetters = (str1, str2) => {
 //
 
 const targetIndex = (arr, int) => {
-    // write your code here
-}
+  // write your code here
+};
 // -------------------------------------------------------------------------------------------------------
 
 module.exports = { wordLength, wordLetters, targetIndex };
